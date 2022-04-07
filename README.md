@@ -5,6 +5,6 @@ These Programs currently work with both of these mods. Installing the "install" 
 
 ## Links
 
-New Mod: [CCTweaked](https://tweaked.cc/)
+Minecraft 1.12.2 +: [CCTweaked](https://tweaked.cc/)
 
-Original Mod: [ComputerCraft](https://www.computercraft.info/)
+Minecraft Older then 1.8: [ComputerCraft](https://www.computercraft.info/)
