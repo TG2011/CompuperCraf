@@ -59,6 +59,7 @@ function MyPrograms()
     shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof")
     shell.run("wget",github .. "select.lua",mydir .. "/select")
     shell.run("wget",github .. "place.lua",mydir .. "/place")
+    shell.run("wget",github .. "9x9.lua",mydir .. "/9x9")
     shell.run("wget",github .. "startup.lua /startup")
     --Third Party Software
     FrequentlyUsedPrograms()
