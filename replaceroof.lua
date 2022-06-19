@@ -20,7 +20,7 @@ function helper()
         local Success, Data
         Success,Data=turtle.inspectDown()
         print("Place the turtle on the front left corner of the area to replace the floor")
-        print("Arguments (help/set) Length Width")
+        print("Arguments Length Width (help/set)")
         print("You can use the set argument before the dimensions to use the floor material bellow the turtle to be the replacement material rather then editing the program file")
         print("")
         print("Current Floor material is "..Data.name)
@@ -28,20 +28,23 @@ function helper()
     end
 end
 function setfloormat()
-    if args[1] == "set" then
-        local Success, Data
-        Success,Data=turtle.inspectUp()
-        print("Would You like to use ".. Data.name .. " as you replacement material?")
-        print("y/n")
-        local input = read()
-        if input == "y" then
-            flooritem = Data.name
-            length = args[2]
-            width = args[3]
-        else
-            error()
+    for _, v in pairs(args) do
+		if v == "set" then
+    --if args[1] == "set" then
+            local Success, Data
+            Success,Data=turtle.inspectUp()
+            print("Would You like to use ".. Data.name .. " as you replacement material?")
+            print("y/n")
+            local input = read()
+            if input == "y" then
+                flooritem = Data.name
+                --length = args[2]
+                --width = args[3]
+            else
+                error()
+            end
+            return
         end
-        return
     end
 end
 
