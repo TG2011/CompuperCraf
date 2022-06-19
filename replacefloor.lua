@@ -28,20 +28,22 @@ function helper()
     end
 end
 function setfloormat()
-    if args[1] == "set" then
-        local Success, Data
-        Success,Data=turtle.inspectDown()
-        print("Would You like to use ".. Data.name .. " as you replacement material?")
-        print("y/n")
-        local input = read()
-        if input == "y" then
-            flooritem = Data.name
-            length = args[2]
-            width = args[3]
-        else
-            error()
+    for _, v in pairs(args) do
+		if v == "set" then
+            local Success, Data
+            Success,Data=turtle.inspectDown()
+            print("Would You like to use ".. Data.name .. " as you replacement material?")
+            print("y/n")
+            local input = read()
+            if input == "y" then
+                flooritem = Data.name
+                length = args[2]
+                width = args[3]
+            else
+                error()
+            end
+            return
         end
-        return
     end
 end
 
