@@ -67,3 +67,14 @@ if args[1] == "f" then
 	directiondig = turtle.digDown()
 	directiondetect = turtle.detectDown()
 end
+
+-- This function is a quick thing to show that you can search the list of arguments for a keyword to trigger something.
+-- Probably going to make an "Index" function that looks for help or manual and other similar things to trigger the help info.
+function contains(args)
+	for _, v in pairs(args) do
+		if v == "search_term" then
+			return true
+		end
+	end
+	return false
+end
