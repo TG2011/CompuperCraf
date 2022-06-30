@@ -36,6 +36,7 @@ function checkinventory()
         turtle.select(j)
         stock = stock + turtle.getItemCount()
     end
+    turtle.select(1)
     if stock <= neededblocks then
         extrablocks = neededblocks - stock
         print("Please Provide ", extrablocks," more blocks to Build Structure")
