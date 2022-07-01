@@ -67,7 +67,8 @@ function MyPrograms()
     shell.run("wget",github .. "clock.lua",mydir .. "/clock")
     shell.run("wget",github .. "grabber.lua",mydir .. "/sucker")
     shell.run("wget",github .. "pickyblockbreak.lua",mydir .. "/pickyblockbreak")
-    shell.run("wget",github .. "startup.lua /startup")
+    fs.delete("/startup") -- delete startup and replace it
+    shell.run("wget",github .. "startup.lua /startup") -- download startup
     --Third Party Software
     FrequentlyUsedPrograms()
 end
