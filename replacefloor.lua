@@ -15,6 +15,12 @@ slotnum = 1
 loop = 0
 stock = 0
 
+function defaultitem()
+    turtle.select(1)
+    firstslot = turtle.getItemDetail()
+    flooritem = firstslot.name
+end
+
 function helper()
     if args[1] == "help" then
         local Success, Data
@@ -156,6 +162,7 @@ function checkstock()
 end
 
 helper()
+defaultitem() -- should set the floor item based on the first slot
 setfloormat()
 print("Floor Size: " .. length*width)
 checkstock()

@@ -15,12 +15,18 @@ slotnum = 1
 loop = 0
 stock = 0
 
+function defaultitem()
+    turtle.select(1)
+    firstslot = turtle.getItemDetail()
+    flooritem = firstslot.name
+end
+
 function helper()
     if args[1] == "help" then
         local Success, Data
         Success,Data=turtle.inspectDown()
         print("Place the turtle on the front left corner of the area to replace the floor")
-        print("Arguments Length Width (help/set)")
+        print("Arguments Length Width (Set/Help)")
         print("You can use the set argument before the dimensions to use the floor material bellow the turtle to be the replacement material rather then editing the program file")
         print("")
         print("Current Floor material is "..Data.name)
@@ -157,6 +163,7 @@ function checkstock()
 end
 
 helper()
+defaultitem() -- should set the roof item based on the first slot
 setfloormat()
 print("Floor Size: " .. length*width)
 checkstock()
