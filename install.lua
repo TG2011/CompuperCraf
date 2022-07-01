@@ -1,7 +1,11 @@
 --[[Installs all my programs
 
     Updated to handle being instlled from a floppy disk. will also update the install on the floppy disk if it is detected running there.
-    This way the installer on the disk is also always at the lastest version.]]
+    This way the installer on the disk is also always at the lastest version.
+
+    For initial install run the following, this will commit the initial installer for use on the computers
+    wget https://raw.githubusercontent.com/Chessehead17/ComputerCraft/main/install.lua install
+]]
 
 --Setup variables
 args = {...}

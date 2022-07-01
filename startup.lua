@@ -9,6 +9,11 @@ end
 function runprogram()
   shell.run("NAME OF PROGRAM")
 end
-
+function autostart()
+  if fs.exists("/autostart") then
+    shell.run("autostart")
+  end
+end
 
 addpath()
+autostart()
