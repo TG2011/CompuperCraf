@@ -36,6 +36,7 @@ end
 function setfloormat()
     for _, v in pairs(args) do
 		if v == "set" then
+    --if args[1] == "set" then
             local Success, Data
             Success,Data=turtle.inspectDown()
             print("Would You like to use ".. Data.name .. " as you replacement material?")
@@ -119,7 +120,7 @@ end
 
 function replacefloor()
     while turtle.detect() do turtle.dig() end
-    turtle.forward()
+    --turtle.forward()
     for y=1,width-1,1 do
         lenghrun()
         shiftturn()

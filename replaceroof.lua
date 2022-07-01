@@ -120,7 +120,7 @@ end
 
 function replacefloor()
     while turtle.detect() do turtle.dig() end
-    turtle.forward()
+    --turtle.forward()
     for y=1,width-1,1 do
         lenghrun()
         shiftturn()
