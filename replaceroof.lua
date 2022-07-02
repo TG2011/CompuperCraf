@@ -1,3 +1,8 @@
+--[[
+    AS OF 2022-07-02 THIS PROGRAM WAS SUPERSEDED BY THE GENERAL REPLACE PROGRAM
+    THAT PROGRAM CAN DO BOTH FLOOR AND CEILING SO THESE TWO PARTNER PROGRAMS ARE REDUNDENT
+]]
+
 --[[This program will replace the floor with another material
 You will have to set the material of the floor in the argument bellow called "flooritem".
 Working on making it a table so it can compare against a list of options but for now you can use the help option
