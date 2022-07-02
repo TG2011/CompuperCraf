@@ -171,8 +171,9 @@ function returnhome()
         for u=1,length-1,1 do
             turtle.back()
         end
-        turtle.turnLeft()
-        turtle.turnLeft()
+        -- Not sure why I had it turning around but hey
+        --turtle.turnLeft()
+        --turtle.turnLeft()
         print("Done")
     end
 end
