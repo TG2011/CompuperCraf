@@ -10,76 +10,82 @@ flooritem = ("minecraft:smooth_stone")
 args = {...}
 length = args[2]
 width = args[3]
+direction = args[1]
 columnnumber = 1
 slotnum = 1
 loop = 0
 stock = 0
 
-if args[1] == "r" or "roof" or "up" then
-    direction = "up"
-elseif args[1] == "f" or "floor" or "down" then
-    direction = "down"
-else
-    print("Usage is:")
-    print("replace <direction> <length> <width>")
-    error()
+function digdirection()
+    if direction == "roof" then
+        turtle.digUp()
+    elseif direction == "floor" then
+        turtle.digDown()
+    else
+        print("Please State Floor or Roof")
+        error()
+    end
+end
+
+function inspectdirection()
+    if direction == "roof" then
+        turtle.inspectUp()
+    elseif direction == "floor" then
+        turtle.inspectDown()
+    else
+        print("Please State Floor or Roof")
+        error()
+    end
+end
+
+function placedirection()
+    if direction == "roof" then
+        turtle.placeUp()
+    elseif direction == "floor" then
+        turtle.placeDown()
+    else
+        print("Please State Floor or Roof")
+        error()
+    end
+end
+
+function defaultitem()
+    turtle.select(1)
+    firstslot = turtle.getItemDetail()
+    flooritem = firstslot.name
 end
 
 function helper()
     if args[1] == "help" then
         local Success, Data
-        Success,Data=turtle.inspectDown()
-        print("Place the turtle on the front left corner of the area to replace the floor")
-        print("Arguments (help/set) Length Width")
-        print("You can use the set argument before the dimensions to use the floor material bellow the turtle to be the replacement material rather then editing the program file")
+        Success,Data=inspectdirection()
+        print("Place the turtle on the front left corner of the area to replace")
+        print("Arguments")
+        print("replace [floor|roof] [L] [W]")
+        --print("You can use the set argument before the dimensions to use the floor material bellow the turtle to be the replacement material rather then editing the program file")
         print("")
         print("Current Floor material is "..Data.name)
         error()
     end
 end
 function setfloormat()
-    local Success, Data
-    Success,Data=directioninspect()
-    --print("Would You like to use ".. Data.name .. " as you replacement material?")
-    --print("y/n")
-    --local input = read()
-    --if input == "y" then
-        flooritem = Data.name
-        length = args[3]
-        width = args[4]
-    --else
-        --error()
-    --end
-end
-
-function directionplace()
-    if direction == "up" then
-        turtle.placeUp()
-    elseif direction == "down" then
-        turtle.placeDown()
-    else
-        print('No Direction Selected')
-        error()
-    end
-end
-function directiondig()
-    if direction == "up" then
-        turtle.digUp()
-    elseif direction == "down" then
-        turtle.digDown()
-    else
-        print('No Direction Selected')
-        error()
-    end
-end
-function directioninspect()
-    if direction == "up" then
-        turtle.inspectUp()
-    elseif direction == "down" then
-        turtle.inspectDown()
-    else
-        print('No Direction Selected')
-        error()
+    for _, v in pairs(args) do
+		if v == "set" then
+    --if args[1] == "set" then
+            local Success, Data
+            Success,Data=inspectdirection()
+            print("Would You like to use ".. Data.name .. " as you replacement material?")
+            print("y/n")
+            local input = read()
+            if input == "y" then
+                flooritem = Data.name
+                --length = args[2]
+                --width = args[3]
+            else
+                error()
+            end
+            return
+        end
     end
 end
 
@@ -97,7 +103,7 @@ function checkslot()
     local Data
     Data=turtle.getItemDetail(1)
     if Data.name == flooritem then
-        directionplace()
+        placedirection()
     else
         print("no can do")
     end
@@ -111,7 +117,7 @@ function placefloor()
         if Data ~= nil then
             if Data.name == flooritem then
                 turtle.select(i)
-                directionplace()
+                placedirection()
                 break
             end
         end
@@ -119,7 +125,7 @@ function placefloor()
 end
 
 function replacetile()
-    directiondig()
+    digdirection()
     placefloor()
 end
 
@@ -149,7 +155,7 @@ end
 
 function replacefloor()
     while turtle.detect() do turtle.dig() end
-    turtle.forward()
+    --turtle.forward()
     for y=1,width-1,1 do
         lenghrun()
         shiftturn()
@@ -159,13 +165,15 @@ end
 
 function returnhome()
     if (columnnumber % 2 == 0) then
-        if turtle.detect() then turtle.dig() end
+        --if turtle.detect() then turtle.dig() end
         print("Done")
     else
         for u=1,length-1,1 do
             turtle.back()
-            print("Done")
         end
+        turtle.turnLeft()
+        turtle.turnLeft()
+        print("Done")
     end
 end
 
@@ -190,8 +198,9 @@ function checkstock()
 end
 
 helper()
+defaultitem() -- should set the floor item based on the first slot
 setfloormat()
-print("Floor Size: " .. length*width)
+print("Area Size: " .. length*width)
 checkstock()
 replacefloor()
 returnhome()

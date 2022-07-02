@@ -59,15 +59,16 @@ function MyPrograms()
     shell.run("wget",github .. "stairsv2.lua",mydir .. "/teststairs")
     shell.run("wget",github .. "pathmaker.lua",mydir .. "/pathmaker")
     shell.run("wget",github .. "inventorychecker.lua",mydir .. "/inventoryred")
-    shell.run("wget",github .. "replacefloor.lua",mydir .. "/replacefloor")
-    shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof")
+    --shell.run("wget",github .. "replacefloor.lua",mydir .. "/replacefloor") -- has been superseded by replace
+    --shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof") -- has been superseded by replace
+    shell.run("wget",github .. "replace.lua",mydir .. "/replace")
     shell.run("wget",github .. "select.lua",mydir .. "/select")
     shell.run("wget",github .. "place.lua",mydir .. "/place")
     shell.run("wget",github .. "9x9.lua",mydir .. "/9x9")
     shell.run("wget",github .. "clock.lua",mydir .. "/clock")
     shell.run("wget",github .. "grabber.lua",mydir .. "/sucker")
     shell.run("wget",github .. "pickyblockbreak.lua",mydir .. "/pickyblockbreak")
-    fs.delete("/startup") -- delete startup and replace it
+    fs.delete("/startup") -- delete startup to replace it
     shell.run("wget",github .. "startup.lua /startup") -- download startup
     --Third Party Software
     FrequentlyUsedPrograms()
