@@ -17,9 +17,9 @@ loop = 0
 stock = 0
 
 function digdirection()
-    if direction == "roof" then
+    if direction == "roof" or "r" then
         turtle.digUp()
-    elseif direction == "floor" then
+    elseif direction == "floor" or "f" then
         turtle.digDown()
     else
         print("Please State Floor or Roof")
@@ -28,9 +28,9 @@ function digdirection()
 end
 
 function inspectdirection()
-    if direction == "roof" then
+    if direction == "roof" or "r" then
         turtle.inspectUp()
-    elseif direction == "floor" then
+    elseif direction == "floor" or "f" then
         turtle.inspectDown()
     else
         print("Please State Floor or Roof")
@@ -39,9 +39,9 @@ function inspectdirection()
 end
 
 function placedirection()
-    if direction == "roof" then
+    if direction == "roof" or "r" then
         turtle.placeUp()
-    elseif direction == "floor" then
+    elseif direction == "floor" or "f" then
         turtle.placeDown()
     else
         print("Please State Floor or Roof")
