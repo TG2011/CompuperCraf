@@ -5,6 +5,10 @@
 
     For initial install run the following, this will commit the initial installer for use on the computers
     wget https://raw.githubusercontent.com/Chessehead17/ComputerCraft/main/install.lua install
+
+    Known as of 1.18.2 CC: Tweaked (Possibly earlier but this is when I noticed it) allows for you to drag a file onto the minecraft window
+    while you have an open Computer or Turtle terminal and allows you to upload files that way. That may be the simpler way to do the initial
+    upload of the install script and then you can continue functioning via the update command afterwards.
 ]]
 
 --Setup variables
