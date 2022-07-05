@@ -42,5 +42,6 @@ function itempuller()
 end
 
 --Main Function Execution
+term.clear()
 finditem()
 itempuller()

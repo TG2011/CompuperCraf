@@ -11,6 +11,7 @@
 args = {...}
 mydir = "/nickprog" --this is the local directory that will have the programs installed to
 root = "/"
+ext = ".lua"
 disk = "disk" --name of the directory that is the disk, here for future proofing if this name changes
 github = "https://raw.githubusercontent.com/Chessehead17/ComputerCraft/main/" -- the base url for git so it doesn't need to be repeated
 
@@ -48,26 +49,27 @@ end
 
 function MyPrograms()
     fs.delete(mydir) -- this will delte my install directory to prepare for redownload of software
-    shell.run("wget",github .. "diggerv2.lua",mydir .. "/digger")
-    shell.run("wget",github .. "stairs.lua",mydir .. "/stairs")
-    shell.run("wget",github .. "customtunneler.lua",mydir .. "/tunneler")
-    shell.run("wget",github .. "portaldigger.lua",mydir .. "/portaldigger")
-    shell.run("wget",github .. "Bridge.lua",mydir .. "/bridge")
-    shell.run("wget",github .. "dig.lua",mydir .. "/dig")
-    shell.run("wget",github .. "BlockBreaker.lua",mydir .. "/blockbreak")
-    shell.run("wget",github .. "ChunkQuarryFixer.lua",mydir .. "/fix")
-    shell.run("wget",github .. "stairsv2.lua",mydir .. "/teststairs")
-    shell.run("wget",github .. "pathmaker.lua",mydir .. "/pathmaker")
-    shell.run("wget",github .. "inventorychecker.lua",mydir .. "/inventoryred")
+    shell.run("wget",github .. "diggerv2" .. ext,mydir .. "/digger")
+    shell.run("wget",github .. "stairs" .. ext,mydir .. "/stairs")
+    shell.run("wget",github .. "customtunneler" .. ext,mydir .. "/tunneler")
+    shell.run("wget",github .. "portaldigger" .. ext,mydir .. "/portaldigger")
+    shell.run("wget",github .. "Bridge" .. ext,mydir .. "/bridge")
+    shell.run("wget",github .. "dig" .. ext,mydir .. "/dig")
+    shell.run("wget",github .. "BlockBreaker" .. ext,mydir .. "/blockbreak")
+    shell.run("wget",github .. "ChunkQuarryFixer" .. ext,mydir .. "/fix")
+    shell.run("wget",github .. "stairsv2" .. ext,mydir .. "/teststairs")
+    shell.run("wget",github .. "pathmaker" .. ext,mydir .. "/pathmaker")
+    shell.run("wget",github .. "inventorychecker" .. ext,mydir .. "/inventoryred")
     --shell.run("wget",github .. "replacefloor.lua",mydir .. "/replacefloor") -- has been superseded by replace
     --shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof") -- has been superseded by replace
-    shell.run("wget",github .. "replace.lua",mydir .. "/replace")
-    shell.run("wget",github .. "select.lua",mydir .. "/select")
-    shell.run("wget",github .. "place.lua",mydir .. "/place")
-    shell.run("wget",github .. "9x9.lua",mydir .. "/9x9")
-    shell.run("wget",github .. "clock.lua",mydir .. "/clock")
-    shell.run("wget",github .. "grabber.lua",mydir .. "/sucker")
-    shell.run("wget",github .. "pickyblockbreak.lua",mydir .. "/pickyblockbreak")
+    shell.run("wget",github .. "replace" .. ext,mydir .. "/replace")
+    shell.run("wget",github .. "select" .. ext,mydir .. "/select")
+    shell.run("wget",github .. "place" .. ext,mydir .. "/place")
+    shell.run("wget",github .. "9x9" .. ext,mydir .. "/9x9")
+    shell.run("wget",github .. "grabber" .. ext,mydir .. "/grabber")
+    shell.run("wget",github .. "clock" .. ext,mydir .. "/clock")
+    shell.run("wget",github .. "grabber" .. ext,mydir .. "/sucker")
+    shell.run("wget",github .. "pickyblockbreak" .. ext,mydir .. "/pickyblockbreak")
     fs.delete("/startup") -- delete startup to replace it
     shell.run("wget",github .. "startup.lua /startup") -- download startup
     --Third Party Software
