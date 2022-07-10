@@ -72,6 +72,7 @@ function MyPrograms()
     shell.run("wget",github .. "9x9" .. ext,mydir .. "/9x9")
     shell.run("wget",github .. "grabber" .. ext,mydir .. "/grabber")
     shell.run("wget",github .. "clock" .. ext,mydir .. "/clock")
+    shell.run("wget",github .. "calender" .. ext,mydir .. "/calender")
     shell.run("wget",github .. "grabber" .. ext,mydir .. "/sucker")
     shell.run("wget",github .. "pickyblockbreak" .. ext,mydir .. "/pickyblockbreak")
     fs.delete("/startup") -- delete startup to replace it
