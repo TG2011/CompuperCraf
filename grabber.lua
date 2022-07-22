@@ -9,7 +9,7 @@ function finditem()
     pork = turtle.getItemDetail(1)
     --term.clear()
     term.setCursorPos(1,1)
-    print("Grabbing ",pork.name," From Inventory")
+    print("Grabbing",pork.name,"From Inventory")
 end
 
 -- this is just a sample function to that was used for reference, can be safley ignored
@@ -30,8 +30,8 @@ function itempuller()
         --error()
         if item.name == pork.name then
             term.clearLine()
-            print("Found ", item.name," Grabbing")
-            turtle.select(64)
+            print("Found", item.name,", Grabbing")
+            turtle.select(1)
             turtle.suck()
         else
             term.clearLine()
