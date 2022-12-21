@@ -64,9 +64,9 @@ function MyPrograms()
     shell.run("wget",github .. "stairsv2" .. ext,mydir .. "/teststairs")
     shell.run("wget",github .. "pathmaker" .. ext,mydir .. "/pathmaker")
     shell.run("wget",github .. "inventorychecker" .. ext,mydir .. "/inventoryred")
-    --shell.run("wget",github .. "replacefloor.lua",mydir .. "/replacefloor") -- has been superseded by replace
-    --shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof") -- has been superseded by replace
-    shell.run("wget",github .. "replace" .. ext,mydir .. "/replace")
+    shell.run("wget",github .. "replacefloor.lua",mydir .. "/replacefloor") -- has been superseded by replace
+    shell.run("wget",github .. "replaceroof.lua",mydir .. "/replaceroof") -- has been superseded by replace
+    -- shell.run("wget",github .. "replace" .. ext,mydir .. "/replace")
     shell.run("wget",github .. "select" .. ext,mydir .. "/select")
     shell.run("wget",github .. "place" .. ext,mydir .. "/place")
     shell.run("wget",github .. "9x9" .. ext,mydir .. "/9x9")
