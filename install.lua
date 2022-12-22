@@ -75,6 +75,7 @@ function MyPrograms()
     shell.run("wget",github .. "calender" .. ext,mydir .. "/calender")
     shell.run("wget",github .. "grabber" .. ext,mydir .. "/sucker")
     shell.run("wget",github .. "pickyblockbreak" .. ext,mydir .. "/pickyblockbreak")
+    shell.run("wget",github .. "killbox" .. ext,mydir .. "/killbox")
     fs.delete("/startup") -- delete startup to replace it
     shell.run("wget",github .. "startup.lua /startup") -- download startup
     --Third Party Software
