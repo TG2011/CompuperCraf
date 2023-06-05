@@ -8,9 +8,9 @@ to get the current floor type name so you can edit this variable to make it quic
 flooritem = ("minecraft:smooth_stone")
 -- Arguments
 args = {...}
+direction = args[1]
 length = args[2]
 width = args[3]
-direction = args[1]
 columnnumber = 1
 slotnum = 1
 loop = 0
