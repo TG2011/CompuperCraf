@@ -1,4 +1,4 @@
-bFull = false
+Full = false
 args = {...}
 opt1 = args[1]
 storagedirection = args[2]
